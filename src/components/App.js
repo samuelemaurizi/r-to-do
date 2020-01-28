@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import uuidv4 from 'uuid/v4';
 import '../styles/App.css';
 
@@ -41,15 +41,22 @@ function App() {
   }
 
   return (
-    <Fragment>
-      <input ref={todoNameRef} type='text'></input>
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearTodos}>Clear Todo</button>
-      <div>
-        <span>{todos.filter(todo => !todo.complete).length}</span> left to do
+    <div className='container'>
+      <div className='title'>
+        <h1>Todos</h1>
+      </div>
+      <div className='form-control-group'>
+        <input ref={todoNameRef} type='text' placeholder='Todo'></input>
+        <div className='form-btns'>
+          <button onClick={handleAddTodo}>Add Todo</button>
+          <button onClick={handleClearTodos}>Clear Todo</button>
+        </div>
+        <div className='form-txt'>
+          <span>{todos.filter(todo => !todo.complete).length}</span> left to do
+        </div>
       </div>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-    </Fragment>
+    </div>
   );
 }
 

@@ -1,0 +1,12 @@
+.todo {
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.75rem;
+  width: 80%;
+  border-bottom: 1px solid #444;
+}
+
+@media only screen and (max-width: 350px) {
+  .todo {
+    width: 100%;
+  }
+}
